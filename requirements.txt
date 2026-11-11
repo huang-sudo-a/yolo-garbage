@@ -1,0 +1,12 @@
+# INVC YOLO11 垃圾分类项目 - 训练环境直接依赖(版本已于 2026-09-28 验证锁定)
+# 安装源:清华 PyPI 镜像(见 docker/Dockerfile 的 PIP_INDEX_URL)
+# 完整依赖清单(含 torch 等基础镜像自带包):docs/requirements-freeze.txt
+# 注意:PyYAML 6.0.2 由基础镜像 conda 提供,不在 pip 清单中,重复安装无害
+ultralytics==8.4.164
+opencv-python-headless==5.0.0.93
+albumentations==2.0.8
+tensorboard==2.21.0
+PyYAML==6.0.2
+pandas==3.0.6
+matplotlib==3.11.2
+pyserial==3.5

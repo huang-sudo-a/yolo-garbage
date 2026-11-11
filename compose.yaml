@@ -1,0 +1,47 @@
+# INVC YOLO11 垃圾分类项目 - 训练环境(Docker Desktop / WSL2 + NVIDIA GPU)
+#
+# 常用命令:
+#   docker compose build                          # 构建训练镜像
+#   docker compose run --rm train bash            # 进入容器调试
+#   docker compose run --rm train python scripts/smoke_test.py   # 冒烟测试(GPU + 1 epoch)
+#   docker compose run --rm train yolo detect train data=configs/xxx.yaml model=models/yolo11n.pt epochs=...   # 正式训练
+#
+# 说明:
+#  - 项目代码目录直接挂载(位于 D 盘);训练输出 runs/ 使用 named volume
+#    持久化在 Docker 数据目录(D:\RobotMaster\DockerDesktopWSL),避免训练循环
+#    直接读写 Windows /mnt/d 路径。
+name: invc-yolo-garbage
+
+services:
+  train:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    image: invc-yolo11-train:latest
+    container_name: invc-yolo11-train
+    stdin_open: true
+    tty: true
+    ipc: host
+    environment:
+      NVIDIA_VISIBLE_DEVICES: all
+      PYTHONUNBUFFERED: "1"
+      # Ultralytics 配置/缓存目录持久化到项目挂载目录
+      YOLO_CONFIG_DIR: /workspace/.ultralytics
+    # 请求全部 GPU(等价于已废弃的 gpus: all 写法,Compose 5.x 兼容)
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    volumes:
+      # 项目代码与配置(Windows D 盘目录,直接绑定挂载)
+      - ./:/workspace
+      # 训练输出/缓存持久化到 named volume(Linux 文件系统,读写更快)
+      - runs-vol:/workspace/runs
+    command: ["/bin/bash"]
+
+volumes:
+  runs-vol:
+    name: invc-yolo-runs

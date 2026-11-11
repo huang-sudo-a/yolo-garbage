@@ -1,0 +1,6 @@
+# Windows 实时演示依赖。PyTorch CUDA 单独通过 scripts/setup_windows.ps1 安装。
+ultralytics==8.4.164
+opencv-python>=4.10,<5
+pyserial==3.5
+PyYAML>=6,<7
+Pillow>=11,<13

@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.ipynb_checkpoints/
+
+# 数据(仅保留占位文件)
+data/raw/*
+data/processed/*
+data/coco8/
+data/self_dataset/
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!data/self_dataset/.gitkeep
+!data/self_dataset_v2/.gitkeep
+data/self_dataset_v2/
+
+# 训练产物与模型权重(二进制,不入库)
+runs/*
+!runs/.gitkeep
+outputs/
+models/*
+!models/.gitkeep
+
+# Ultralytics 配置/缓存
+.ultralytics/
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+
+# pip 缓存
+.cache/
+pip-cache/

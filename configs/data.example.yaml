@@ -1,0 +1,14 @@
+# Ultralytics 数据配置示例 —— 正式数据集就绪后复制为实际配置使用
+# 数据集目录约定见 data/README.md:
+#   data/processed/<dataset>/images/{train,val}
+#   data/processed/<dataset>/labels/{train,val}
+path: /workspace/data/processed/garbage   # 数据集根目录(容器内路径)
+train: images/train
+val: images/val
+
+# 类别示例(垃圾分类四分类,正式类别以标注方案为准,见 configs/class_map.example.yaml)
+names:
+  0: recyclable      # 可回收物
+  1: kitchen_waste   # 厨余垃圾
+  2: hazardous       # 有害垃圾
+  3: other           # 其他垃圾

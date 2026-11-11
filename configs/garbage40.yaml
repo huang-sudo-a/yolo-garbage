@@ -1,0 +1,47 @@
+# 40 类垃圾检测数据集配置。
+# 该路径是 Windows 项目目录在训练容器内的挂载位置。
+path: /workspace/data/garbage_datasets/datasets
+train: images/train
+val: images/val
+
+names:
+  0: FastFoodBox
+  1: SoiledPlastic
+  2: Cigarette
+  3: Toothpick
+  4: Flowerpot
+  5: BambooChopstics
+  6: Meal
+  7: Bone
+  8: FruitPeel
+  9: Pulp
+  10: Tea
+  11: Vegetable
+  12: Eggshell
+  13: FishBone
+  14: Powerbank
+  15: Bag
+  16: CosmeticBottles
+  17: Toys
+  18: PlasticBowl
+  19: PlasticHanger
+  20: PaperBags
+  21: PlugWire
+  22: OldClothes
+  23: Can
+  24: Pillow
+  25: PlushToys
+  26: ShampooBottle
+  27: GlassCup
+  28: Shoes
+  29: Anvil
+  30: Cardboard
+  31: SeasoningBottle
+  32: Bottle
+  33: MetalFoodCans
+  34: Pot
+  35: EdibleOilBarrel
+  36: DrinkBottle
+  37: DryBattery
+  38: Ointment
+  39: ExpiredDrugs

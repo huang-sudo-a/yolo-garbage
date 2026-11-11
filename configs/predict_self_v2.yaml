@@ -1,0 +1,16 @@
+# Second-version prediction example. Training is performed separately.
+# Inside Docker: yolo detect predict cfg=configs/predict_self_v2.yaml
+task: detect
+mode: predict
+model: /workspace/outputs/self_dataset/v2_30ep/weights/best.pt
+source: /workspace/data/self_dataset_v2/images/val
+device: "0"
+imgsz: 640
+rect: false
+conf: 0.5
+iou: 0.5
+agnostic_nms: true
+save: true
+project: /workspace/outputs/self_dataset/v2_30ep
+name: predictions
+exist_ok: false

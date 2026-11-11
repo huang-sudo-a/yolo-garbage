@@ -1,0 +1,47 @@
+# 与 configs/garbage40.yaml 中的模型小类逐一对应。
+# 这是下载数据集提供的分类规则；正式考核时要按现场物品重新核对。
+categories:
+  其他垃圾:
+    - FastFoodBox
+    - SoiledPlastic
+    - Cigarette
+    - Toothpick
+    - Flowerpot
+    - BambooChopstics
+  厨余垃圾:
+    - Meal
+    - Bone
+    - FruitPeel
+    - Pulp
+    - Tea
+    - Vegetable
+    - Eggshell
+    - FishBone
+  可回收垃圾:
+    - Powerbank
+    - Bag
+    - CosmeticBottles
+    - Toys
+    - PlasticBowl
+    - PlasticHanger
+    - PaperBags
+    - PlugWire
+    - OldClothes
+    - Can
+    - Pillow
+    - PlushToys
+    - ShampooBottle
+    - GlassCup
+    - Shoes
+    - Anvil
+    - Cardboard
+    - SeasoningBottle
+    - Bottle
+    - MetalFoodCans
+    - Pot
+    - EdibleOilBarrel
+    - DrinkBottle
+  有害垃圾:
+    - DryBattery
+    - Ointment
+    - ExpiredDrugs

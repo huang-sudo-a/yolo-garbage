@@ -1,0 +1,16 @@
+# Selected on the existing validation split; recheck on live camera images.
+# Run inside Docker: yolo detect predict cfg=configs/predict_self_tuned.yaml
+task: detect
+mode: predict
+model: /workspace/outputs/self_dataset/debug_20261102_01/weights/best.pt
+source: /workspace/data/self_dataset/images/val
+device: "0"
+imgsz: 640
+rect: false
+conf: 0.5
+iou: 0.5
+agnostic_nms: true
+save: true
+project: /workspace/outputs/self_dataset/debug_20261102_01
+name: filtered_predictions
+exist_ok: false
